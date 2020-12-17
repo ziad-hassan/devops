@@ -1,9 +1,12 @@
 # Redis Technical Details
-what is redis
-Persistence
-Authentication
-Replication
-Clustering (Failover)
+what is redis  
+Persistence  
+Authentication  
+Replication  
+Clustering (Failover)  
+
+# Flow Chart of the Configuration
+<img src="./k8s-redis-logic.jpg">
 
 # Configuration
 
