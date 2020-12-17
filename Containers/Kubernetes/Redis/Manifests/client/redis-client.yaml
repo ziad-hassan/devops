@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-client
+  namespace: redis
+  labels:
+    app: redis-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-client
+  template:
+    metadata:
+      labels:
+        app: redis-client
+    spec:
+      containers:
+      - name: redis-client
+        image: ziadhhassan/redis-client
+        env:
+        - name: "REDIS_HOST" 
+          value: "redis"
+        - name: "REDIS_PORT"
+          value: "6379"
+        - name: "REDIS_PASSWORD"
+          value: "a-very-complex-password-here" 
+        ports:
+        - containerPort: 80
