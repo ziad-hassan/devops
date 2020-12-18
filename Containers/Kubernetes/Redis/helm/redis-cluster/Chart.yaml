@@ -1,0 +1,10 @@
+apiVersion: v2
+name: redis-cluster
+description: A Helm chart to Deploy Redis Sentinel with Persistence / Auth / Replication and HA for Kubernetes
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+dependencies:
+- name: redis
+  version: "~0.1.0"
+  repository: "./Charts/redis"
