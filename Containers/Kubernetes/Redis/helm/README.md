@@ -20,7 +20,7 @@ helm package ./redis-cluster
 helm install redis-cluster --create-namespace --namespace redis ./redis-cluster-0.1.0.tgz
 
 # Get Master Name
-kubectl get pods -n redis -o wide | grep `kubectl exec redis-0 -n redis -- redis-cli -h sentinel -p 5000 sentinel get-master-addr-by-name mymaster | head -n 1` | awk '{print $1}'
+kubectl get pods -n redis -o wide | grep `kubectl exec redis-0 -n redis -- redis-cli -h sentinel -p 5000 -a -a a-very-complex-password-here sentinel get-master-addr-by-name mymaster | head -n 1` | awk '{print $1}'
 ```
 
 ### Build client Image and Deploy the App
