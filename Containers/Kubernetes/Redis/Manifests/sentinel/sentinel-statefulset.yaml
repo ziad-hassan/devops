@@ -43,6 +43,7 @@ spec:
             sentinel failover-timeout mymaster 60000
             sentinel parallel-syncs mymaster 1
             sentinel auth-pass mymaster $REDIS_PASSWORD
+            requirepass $REDIS_PASSWORD
             " > /etc/redis/sentinel.conf
             cat /etc/redis/sentinel.conf
         volumeMounts:
